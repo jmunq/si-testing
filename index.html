@@ -7,8 +7,12 @@
   <script>
     // Landing page redirects to the first process (just like the real site entry point)
     var isGitHub = window.location.hostname.indexOf('github.io') !== -1;
-    var repoName = isGitHub ? '/' + window.location.pathname.split('/')[1] : '';
-    window.location.href = repoName + '/page/rappipublic/es/MX/process/enter/CreateGadgetQuotePublicProcess?modelTextId=Gadget&initProcessAction=ToInitial&activeZone=ProcessZone';
+    var pathParts = window.location.pathname.split('/');
+    // On GitHub Project Pages, the first part after the domain is the repo name.
+    // If we're on a User Page or root, split('/')[1] will be empty or a file/folder.
+    // A simple way is to check if it's likely a repo name (not empty and not 'page').
+    var repoName = (isGitHub && pathParts[1] && pathParts[1] !== 'page') ? '/' + pathParts[1] : '';
+    window.location.href = repoName + '/page/rappipublic/es/MX/process/enter/CreateGadgetQuotePublicProcess/?modelTextId=Gadget&initProcessAction=ToInitial&activeZone=ProcessZone';
   </script>
 </head>
 <body>

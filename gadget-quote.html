@@ -289,12 +289,12 @@
       sessionStorage.setItem('plan_price', selectedPlan.price);
       sessionStorage.setItem('plan_id', selectedPlan.plan);
 
-      // FULL PAGE NAVIGATION to CreateSecureThingsProcess
-      // This causes SIE and all assets to re-load (just like the real site)
-      showLoading('Cargando...').then(function() {
-        window.location.href = buildUrl('CreateSecureThingsProcess', {
-          modelTextId: 'SecureThings', initProcessAction: 'NextGadget', activeZone: 'ProcessZone'
-        });
+      // IMMEDIATE navigation — no delay. The browser starts loading the new
+      // document right away, giving sendBeacon almost no time to complete.
+      // This replicates the customer site's behavior where the beacon is canceled.
+      console.log('[NAV] Click → location.href set at', performance.now().toFixed(1) + 'ms');
+      window.location.href = buildUrl('CreateSecureThingsProcess', {
+        modelTextId: 'SecureThings', initProcessAction: 'NextGadget', activeZone: 'ProcessZone'
       });
     });
 
@@ -308,6 +308,17 @@
     // ── Browser back/forward (within this page only) ──
     window.addEventListener('popstate', function(e) {
       if (e.state && e.state.step) showStep(e.state.step);
+    });
+
+    // ── Diagnostics: log unload lifecycle events ──
+    window.addEventListener('pagehide', function() {
+      console.log('[LIFECYCLE] pagehide fired at', performance.now().toFixed(1) + 'ms');
+    });
+    window.addEventListener('visibilitychange', function() {
+      console.log('[LIFECYCLE] visibilitychange →', document.visibilityState, 'at', performance.now().toFixed(1) + 'ms');
+    });
+    window.addEventListener('beforeunload', function() {
+      console.log('[LIFECYCLE] beforeunload fired at', performance.now().toFixed(1) + 'ms');
     });
 
     // Set initial URL

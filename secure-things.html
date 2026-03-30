@@ -329,7 +329,7 @@
     });
 
     document.getElementById('step3Back').addEventListener('click', function() {
-      // FULL PAGE NAVIGATION back to CreateGadgetQuotePublicProcess
+      console.log('[NAV] Back click → location.href set at', performance.now().toFixed(1) + 'ms');
       window.location.href = buildUrl('CreateGadgetQuotePublicProcess', {
         modelTextId: 'Gadget', initProcessAction: 'ToInitial', activeZone: 'ProcessZone'
       });
@@ -390,6 +390,17 @@
     // ── Browser back/forward (within this page only) ──
     window.addEventListener('popstate', function(e) {
       if (e.state && e.state.step) showStep(e.state.step);
+    });
+
+    // ── Diagnostics: log unload lifecycle events ──
+    window.addEventListener('pagehide', function() {
+      console.log('[LIFECYCLE] pagehide fired at', performance.now().toFixed(1) + 'ms');
+    });
+    window.addEventListener('visibilitychange', function() {
+      console.log('[LIFECYCLE] visibilitychange →', document.visibilityState, 'at', performance.now().toFixed(1) + 'ms');
+    });
+    window.addEventListener('beforeunload', function() {
+      console.log('[LIFECYCLE] beforeunload fired at', performance.now().toFixed(1) + 'ms');
     });
 
     // Set initial URL

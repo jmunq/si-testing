@@ -233,7 +233,8 @@
   <script>
     // Detect if we are on GitHub Pages and adjust the base path
     var isGitHub = window.location.hostname.indexOf('github.io') !== -1;
-    var repoName = isGitHub ? '/' + window.location.pathname.split('/')[1] : '';
+    var pathParts = window.location.pathname.split('/');
+    var repoName = (isGitHub && pathParts[1] && pathParts[1] !== 'page') ? '/' + pathParts[1] : '';
     var BASE = repoName + '/page/rappipublic/es/MX/process/enter/';
     var ROOT = repoName || '/';
 
@@ -246,7 +247,9 @@
     function buildUrl(process, extraParams) {
       var p = new URLSearchParams(extraParams);
       p.set('data', fakeData());
-      return BASE + process + '?' + p.toString();
+      // Ensure process ends with a slash for GitHub Pages compatibility
+      var processPath = process.endsWith('/') ? process : process + '/';
+      return BASE + processPath + '?' + p.toString();
     }
 
     // ── Read data from previous page via sessionStorage ──
@@ -333,7 +336,7 @@
     });
 
     document.getElementById('step3Back').addEventListener('click', function() {
-      // FULL PAGE NAVIGATION back to CreateGadgetQuotePublicProcess
+      console.log('[NAV] Back click → location.href set at', performance.now().toFixed(1) + 'ms');
       window.location.href = buildUrl('CreateGadgetQuotePublicProcess', {
         modelTextId: 'Gadget', initProcessAction: 'ToInitial', activeZone: 'ProcessZone'
       });
@@ -394,6 +397,17 @@
     // ── Browser back/forward (within this page only) ──
     window.addEventListener('popstate', function(e) {
       if (e.state && e.state.step) showStep(e.state.step);
+    });
+
+    // ── Diagnostics: log unload lifecycle events ──
+    window.addEventListener('pagehide', function() {
+      console.log('[LIFECYCLE] pagehide fired at', performance.now().toFixed(1) + 'ms');
+    });
+    window.addEventListener('visibilitychange', function() {
+      console.log('[LIFECYCLE] visibilitychange →', document.visibilityState, 'at', performance.now().toFixed(1) + 'ms');
+    });
+    window.addEventListener('beforeunload', function() {
+      console.log('[LIFECYCLE] beforeunload fired at', performance.now().toFixed(1) + 'ms');
     });
 
     // Set initial URL

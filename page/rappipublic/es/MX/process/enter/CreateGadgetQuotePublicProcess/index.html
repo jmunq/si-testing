@@ -166,7 +166,8 @@
   <script>
     // Detect if we are on GitHub Pages and adjust the base path
     var isGitHub = window.location.hostname.indexOf('github.io') !== -1;
-    var repoName = isGitHub ? '/' + window.location.pathname.split('/')[1] : '';
+    var pathParts = window.location.pathname.split('/');
+    var repoName = (isGitHub && pathParts[1] && pathParts[1] !== 'page') ? '/' + pathParts[1] : '';
     var BASE = repoName + '/page/rappipublic/es/MX/process/enter/';
     var ROOT = repoName || '/';
 
@@ -179,7 +180,9 @@
     function buildUrl(process, extraParams) {
       var p = new URLSearchParams(extraParams);
       p.set('data', fakeData());
-      return BASE + process + '?' + p.toString();
+      // Ensure process ends with a slash for GitHub Pages compatibility
+      var processPath = process.endsWith('/') ? process : process + '/';
+      return BASE + processPath + '?' + p.toString();
     }
 
     // ── Models DB ──
@@ -293,12 +296,12 @@
       sessionStorage.setItem('plan_price', selectedPlan.price);
       sessionStorage.setItem('plan_id', selectedPlan.plan);
 
-      // FULL PAGE NAVIGATION to CreateSecureThingsProcess
-      // This causes SIE and all assets to re-load (just like the real site)
-      showLoading('Cargando...').then(function() {
-        window.location.href = buildUrl('CreateSecureThingsProcess', {
-          modelTextId: 'SecureThings', initProcessAction: 'NextGadget', activeZone: 'ProcessZone'
-        });
+      // IMMEDIATE navigation — no delay. The browser starts loading the new
+      // document right away, giving sendBeacon almost no time to complete.
+      // This replicates the customer site's behavior where the beacon is canceled.
+      console.log('[NAV] Click → location.href set at', performance.now().toFixed(1) + 'ms');
+      window.location.href = buildUrl('CreateSecureThingsProcess', {
+        modelTextId: 'SecureThings', initProcessAction: 'NextGadget', activeZone: 'ProcessZone'
       });
     });
 
@@ -312,6 +315,17 @@
     // ── Browser back/forward (within this page only) ──
     window.addEventListener('popstate', function(e) {
       if (e.state && e.state.step) showStep(e.state.step);
+    });
+
+    // ── Diagnostics: log unload lifecycle events ──
+    window.addEventListener('pagehide', function() {
+      console.log('[LIFECYCLE] pagehide fired at', performance.now().toFixed(1) + 'ms');
+    });
+    window.addEventListener('visibilitychange', function() {
+      console.log('[LIFECYCLE] visibilitychange →', document.visibilityState, 'at', performance.now().toFixed(1) + 'ms');
+    });
+    window.addEventListener('beforeunload', function() {
+      console.log('[LIFECYCLE] beforeunload fired at', performance.now().toFixed(1) + 'ms');
     });
 
     // Set initial URL
