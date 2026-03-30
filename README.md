@@ -1,6 +1,6 @@
 # si-testing
 
-Skeleton replica of the Banorte Seguros Digitales gadget insurance flow (`segurosdigitales.segurosbanorte.com`) for reproducing bugs with Qualtrics Session Replay.
+Skeleton replica of a multi-page gadget insurance flow for reproducing bugs with Qualtrics Session Replay.
 
 ## How it works — multi-page, not SPA
 
