@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Banorte Seguros - Cotiza tu Seguro Gadget</title>
+  <title>Amet Consequat - Cotiza tu Seguro Gadget</title>
   <!-- CORS fix: route Qualtrics Session Replay requests through same-origin proxy -->
-  <script>(function(){var p="/sr-proxy";var f=window.fetch;if(!f)return;window.fetch=function(u,o){var s=typeof u==="string"?u:(u&&u.url);if(s&&s.indexOf("sr.st3.qualtrics.com")!==-1){try{var x=new URL(s);s=p+x.pathname+(x.search||"");u=typeof u==="string"?s:new Request(s,u);}catch(e){}}return f.call(this,u,o);};})();</script>
+  <script>(function(){var p="/sr-proxy";var f=window.fetch;if(f){window.fetch=function(u,o){var s=typeof u==="string"?u:(u&&u.url);if(s&&s.indexOf("sr.st3.qualtrics.com")!==-1){try{var x=new URL(s);s=p+x.pathname+(x.search||"");u=typeof u==="string"?s:new Request(s,u);}catch(e){}}return f.call(this,u,o);};}var b=navigator.sendBeacon;if(b){navigator.sendBeacon=function(u,d){if(u&&u.indexOf("sr.st3.qualtrics.com")!==-1){try{var x=new URL(u);u=p+x.pathname+(x.search||"");}catch(e){}}return b.call(this,u,d);};}})();</script>
   <!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
   <div id='ZN_2drMS30bouuSbOc'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
   <script type='text/javascript'>
     (function(){
       function loadSIE(){
         var s=document.createElement("script");s.type="text/javascript";
-        s.src="https://localhost:3000/SIE/?Q_ZID=ZN_2drMS30bouuSbOc";
+        // s.src="https://localhost:3000/SIE/?Q_ZID=ZN_2drMS30bouuSbOc";
+        s.src="https://s1.g1-cmh.qualtrics.com/SIE/?Q_ZID=ZN_2drMS30bouuSbOc";
         document.body&&document.body.appendChild(s);
       }
       if(document.readyState==="complete"){setTimeout(loadSIE,1500);}
@@ -25,8 +26,8 @@
 <body>
 
   <header class="header">
-    <div class="header-logo">Banorte <span>Seguros</span></div>
-    <div class="header-partner"><span class="rappi-badge">Rappi</span></div>
+    <div class="header-logo">Amet <span>Consequat</span></div>
+    <div class="header-partner"><span class="rappi-badge">Minim</span></div>
   </header>
 
   <nav class="progress-bar">
@@ -68,13 +69,13 @@
           <label>Marca <span class="required">*</span></label>
           <select class="form-control" id="brandSelect">
             <option value="">Selecciona una marca</option>
-            <option value="apple">Apple</option>
-            <option value="samsung">Samsung</option>
-            <option value="xiaomi">Xiaomi</option>
-            <option value="huawei">Huawei</option>
-            <option value="motorola">Motorola</option>
-            <option value="oppo">OPPO</option>
-            <option value="google">Google</option>
+            <option value="lorem">Lorem</option>
+            <option value="ipsum">Ipsum</option>
+            <option value="dolor">Dolor</option>
+            <option value="sitamet">Sit Amet</option>
+            <option value="consect">Consectetur</option>
+            <option value="adipis">Adipiscing</option>
+            <option value="elitsed">Elit Sed</option>
             <option value="otro">Otro</option>
           </select>
         </div>
@@ -124,28 +125,28 @@
       <div class="card">
         <div class="card-title">Planes disponibles</div>
 
-        <div class="coverage-option" data-plan="basico" data-price="99">
-          <div class="coverage-name">Basico</div>
+        <div class="coverage-option" data-plan="eiusmod" data-price="99">
+          <div class="coverage-name">Eiusmod</div>
           <div class="coverage-price">$99 <small>MXN/mes</small></div>
-          <div class="coverage-detail">Dano material hasta $5,000 MXN</div>
+          <div class="coverage-detail">Tempor incididunt ut labore $5,000 MXN</div>
         </div>
 
-        <div class="coverage-option" data-plan="medio" data-price="179">
-          <div class="coverage-name">Medio</div>
+        <div class="coverage-option" data-plan="dolore" data-price="179">
+          <div class="coverage-name">Dolore</div>
           <div class="coverage-price">$179 <small>MXN/mes</small></div>
-          <div class="coverage-detail">Dano material + Robo con violencia hasta $10,000 MXN</div>
+          <div class="coverage-detail">Magna aliqua ut enim ad minim $10,000 MXN</div>
         </div>
 
-        <div class="coverage-option" data-plan="plus" data-price="299">
-          <div class="coverage-name">Plus</div>
+        <div class="coverage-option" data-plan="veniam" data-price="299">
+          <div class="coverage-name">Veniam</div>
           <div class="coverage-price">$299 <small>MXN/mes</small></div>
-          <div class="coverage-detail">Dano material + Robo con violencia hasta $15,000 MXN + Asistencia tecnica</div>
+          <div class="coverage-detail">Quis nostrud exercitation ullamco $15,000 MXN + laboris nisi</div>
         </div>
 
-        <div class="coverage-option" data-plan="elite" data-price="449">
-          <div class="coverage-name">Elite</div>
+        <div class="coverage-option" data-plan="excepteur" data-price="449">
+          <div class="coverage-name">Excepteur</div>
           <div class="coverage-price">$449 <small>MXN/mes</small></div>
-          <div class="coverage-detail">Cobertura total hasta $20,000 MXN + Todas las asistencias</div>
+          <div class="coverage-detail">Sint occaecat cupidatat $20,000 MXN + non proident</div>
         </div>
       </div>
 
@@ -158,7 +159,7 @@
   </main>
 
   <footer class="footer">
-    Banorte Seguros &copy; 2025. Todos los derechos reservados.<br>
+    Amet Consequat &copy; 2025. Todos los derechos reservados.<br>
     <a href="#">Aviso de Privacidad</a> &middot; <a href="#">Terminos y Condiciones</a> &middot; <a href="#">Contacto</a>
   </footer>
 
@@ -179,13 +180,13 @@
 
     // ── Models DB ──
     var models = {
-      apple: ['iPhone 16 Pro Max','iPhone 16 Pro','iPhone 16','iPhone 15 Pro Max','iPhone 15','iPhone 14','iPhone SE'],
-      samsung: ['Galaxy S24 Ultra','Galaxy S24+','Galaxy S24','Galaxy S23','Galaxy A54','Galaxy Z Fold5','Galaxy Z Flip5'],
-      xiaomi: ['14 Ultra','14 Pro','Redmi Note 13 Pro','Redmi Note 13','POCO F5'],
-      huawei: ['P60 Pro','Mate 60 Pro','Nova 12','Nova 11'],
-      motorola: ['Edge 40 Pro','Edge 40','Moto G84','Moto G54','Moto G24'],
-      oppo: ['Find X7 Ultra','Reno 11 Pro','Reno 11','A79'],
-      google: ['Pixel 8 Pro','Pixel 8','Pixel 7a','Pixel 7'],
+      lorem: ['Tempor X Pro','Tempor X','Tempor S Max','Incididunt 15','Incididunt 14','Labore SE'],
+      ipsum: ['Magna Ultra','Magna Plus','Magna','Aliqua 54','Veniam Fold','Veniam Flip'],
+      dolor: ['Quis 14 Ultra','Quis 14 Pro','Nostrud Note 13 Pro','Nostrud Note 13','Exercit F5'],
+      sitamet: ['Ullamco 60 Pro','Ullamco 60','Nisi 12','Nisi 11'],
+      consect: ['Fugiat 40 Pro','Fugiat 40','Pariatur G84','Pariatur G54','Pariatur G24'],
+      adipis: ['Voluptate X7 Ultra','Cillum 11 Pro','Cillum 11','Dolore A79'],
+      elitsed: ['Occaecat 8 Pro','Occaecat 8','Cupidatat 7a','Cupidatat 7'],
       otro: ['Otro modelo'],
     };
 
