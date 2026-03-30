@@ -1,0 +1,10 @@
+{
+  "name": "si-testing",
+  "version": "1.0.0",
+  "description": "Local test site for Qualtrics Session Replay with CORS-friendly HTTPS server",
+  "scripts": {
+    "start": "node server.js",
+    "serve": "node server.js"
+  },
+  "private": true
+}

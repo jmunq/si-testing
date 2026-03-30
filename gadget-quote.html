@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banorte Seguros - Cotiza tu Seguro Gadget</title>
+  <!-- CORS fix: route Qualtrics Session Replay requests through same-origin proxy -->
+  <script>(function(){var p="/sr-proxy";var f=window.fetch;if(!f)return;window.fetch=function(u,o){var s=typeof u==="string"?u:(u&&u.url);if(s&&s.indexOf("sr.st3.qualtrics.com")!==-1){try{var x=new URL(s);s=p+x.pathname+(x.search||"");u=typeof u==="string"?s:new Request(s,u);}catch(e){}}return f.call(this,u,o);};})();</script>
+  <!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+  <div id='ZN_2drMS30bouuSbOc'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+  <script type='text/javascript'>
+    (function(){
+      function loadSIE(){
+        var s=document.createElement("script");s.type="text/javascript";
+        s.src="https://localhost:3000/SIE/?Q_ZID=ZN_2drMS30bouuSbOc";
+        document.body&&document.body.appendChild(s);
+      }
+      if(document.readyState==="complete"){setTimeout(loadSIE,1500);}
+      else{window.addEventListener("load",function(){setTimeout(loadSIE,1500);});}
+    })();
+  </script>
+  <!--END WEBSITE FEEDBACK SNIPPET-->
+  <link rel="stylesheet" href="/shared.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-logo">Banorte <span>Seguros</span></div>
+    <div class="header-partner"><span class="rappi-badge">Rappi</span></div>
+  </header>
+
+  <nav class="progress-bar">
+    <div class="steps">
+      <div class="step active" data-step="1">
+        <div class="step-circle">1</div><span>Dispositivo</span>
+      </div>
+      <div class="step-connector" data-conn="1"></div>
+      <div class="step" data-step="2">
+        <div class="step-circle">2</div><span>Cobertura</span>
+      </div>
+      <div class="step-connector" data-conn="2"></div>
+      <div class="step" data-step="3">
+        <div class="step-circle">3</div><span>Datos</span>
+      </div>
+      <div class="step-connector" data-conn="3"></div>
+      <div class="step" data-step="4">
+        <div class="step-circle">4</div><span>Pago</span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+    <div class="loading-text" id="loadingText">Procesando...</div>
+  </div>
+
+  <main class="main">
+
+    <!-- STEP 1: Device Info -->
+    <div class="page active" id="step1">
+      <h1 class="page-title">Datos de tu dispositivo</h1>
+      <p class="page-subtitle">Ingresa la informacion de tu equipo para cotizar tu seguro.</p>
+
+      <div class="card">
+        <div class="card-title">Informacion del equipo</div>
+
+        <div class="form-group">
+          <label>Marca <span class="required">*</span></label>
+          <select class="form-control" id="brandSelect">
+            <option value="">Selecciona una marca</option>
+            <option value="apple">Apple</option>
+            <option value="samsung">Samsung</option>
+            <option value="xiaomi">Xiaomi</option>
+            <option value="huawei">Huawei</option>
+            <option value="motorola">Motorola</option>
+            <option value="oppo">OPPO</option>
+            <option value="google">Google</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Modelo <span class="required">*</span></label>
+          <select class="form-control" id="modelSelect" disabled>
+            <option value="">Primero selecciona una marca</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>IMEI <span class="required">*</span></label>
+          <input type="text" class="form-control" id="imeiInput" placeholder="Ej: 356938035643809" maxlength="15" inputmode="numeric">
+          <div class="form-hint">Marca *#06# en tu telefono para obtener tu IMEI</div>
+          <div class="form-error" id="imeiError">El IMEI debe tener 15 digitos</div>
+        </div>
+
+        <div class="form-group">
+          <label>Numero de serie (opcional)</label>
+          <input type="text" class="form-control" id="serialInput" placeholder="Numero de serie del dispositivo">
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" id="step1Next" disabled>Continuar</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Coverage Selection -->
+    <div class="page" id="step2">
+      <h1 class="page-title">Elige tu cobertura</h1>
+      <p class="page-subtitle">Selecciona el plan que mejor se adapte a tus necesidades.</p>
+
+      <div class="card">
+        <div class="card-title">Tu dispositivo</div>
+        <div class="summary-row">
+          <span class="summary-label">Equipo</span>
+          <span class="summary-value" id="summaryDevice">-</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">IMEI</span>
+          <span class="summary-value" id="summaryImei">-</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Planes disponibles</div>
+
+        <div class="coverage-option" data-plan="basico" data-price="99">
+          <div class="coverage-name">Basico</div>
+          <div class="coverage-price">$99 <small>MXN/mes</small></div>
+          <div class="coverage-detail">Dano material hasta $5,000 MXN</div>
+        </div>
+
+        <div class="coverage-option" data-plan="medio" data-price="179">
+          <div class="coverage-name">Medio</div>
+          <div class="coverage-price">$179 <small>MXN/mes</small></div>
+          <div class="coverage-detail">Dano material + Robo con violencia hasta $10,000 MXN</div>
+        </div>
+
+        <div class="coverage-option" data-plan="plus" data-price="299">
+          <div class="coverage-name">Plus</div>
+          <div class="coverage-price">$299 <small>MXN/mes</small></div>
+          <div class="coverage-detail">Dano material + Robo con violencia hasta $15,000 MXN + Asistencia tecnica</div>
+        </div>
+
+        <div class="coverage-option" data-plan="elite" data-price="449">
+          <div class="coverage-name">Elite</div>
+          <div class="coverage-price">$449 <small>MXN/mes</small></div>
+          <div class="coverage-detail">Cobertura total hasta $20,000 MXN + Todas las asistencias</div>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" id="step2Next" disabled>Continuar</button>
+        <button class="btn btn-secondary" id="step2Back">Regresar</button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    Banorte Seguros &copy; 2025. Todos los derechos reservados.<br>
+    <a href="#">Aviso de Privacidad</a> &middot; <a href="#">Terminos y Condiciones</a> &middot; <a href="#">Contacto</a>
+  </footer>
+
+  <script>
+    var BASE = '/page/rappipublic/es/MX/process/enter/';
+
+    function fakeData() {
+      var c = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-', r = '';
+      for (var i = 0; i < 80; i++) r += c.charAt(Math.floor(Math.random() * c.length));
+      return r;
+    }
+
+    function buildUrl(process, extraParams) {
+      var p = new URLSearchParams(extraParams);
+      p.set('data', fakeData());
+      return BASE + process + '?' + p.toString();
+    }
+
+    // ── Models DB ──
+    var models = {
+      apple: ['iPhone 16 Pro Max','iPhone 16 Pro','iPhone 16','iPhone 15 Pro Max','iPhone 15','iPhone 14','iPhone SE'],
+      samsung: ['Galaxy S24 Ultra','Galaxy S24+','Galaxy S24','Galaxy S23','Galaxy A54','Galaxy Z Fold5','Galaxy Z Flip5'],
+      xiaomi: ['14 Ultra','14 Pro','Redmi Note 13 Pro','Redmi Note 13','POCO F5'],
+      huawei: ['P60 Pro','Mate 60 Pro','Nova 12','Nova 11'],
+      motorola: ['Edge 40 Pro','Edge 40','Moto G84','Moto G54','Moto G24'],
+      oppo: ['Find X7 Ultra','Reno 11 Pro','Reno 11','A79'],
+      google: ['Pixel 8 Pro','Pixel 8','Pixel 7a','Pixel 7'],
+      otro: ['Otro modelo'],
+    };
+
+    // ── DOM ──
+    var pages = document.querySelectorAll('.page');
+    var stepEls = document.querySelectorAll('.step');
+    var connEls = document.querySelectorAll('.step-connector');
+    var currentStep = 1;
+
+    function showStep(n) {
+      currentStep = n;
+      pages.forEach(function(p) { p.classList.remove('active'); });
+      document.getElementById('step' + n).classList.add('active');
+      stepEls.forEach(function(s) {
+        var sn = parseInt(s.dataset.step);
+        s.classList.remove('active','completed');
+        if (sn === n) s.classList.add('active');
+        else if (sn < n) s.classList.add('completed');
+      });
+      connEls.forEach(function(c) {
+        var cn = parseInt(c.dataset.conn);
+        c.classList.toggle('completed', cn < n);
+      });
+      window.scrollTo(0, 0);
+    }
+
+    function showLoading(text, ms) {
+      var ov = document.getElementById('loadingOverlay');
+      document.getElementById('loadingText').textContent = text || 'Procesando...';
+      ov.classList.add('active');
+      return new Promise(function(resolve) {
+        setTimeout(function() { ov.classList.remove('active'); resolve(); }, ms || 1200);
+      });
+    }
+
+    // ── Step 1: Device ──
+    var brandSelect = document.getElementById('brandSelect');
+    var modelSelect = document.getElementById('modelSelect');
+    var imeiInput = document.getElementById('imeiInput');
+    var step1Next = document.getElementById('step1Next');
+
+    brandSelect.addEventListener('change', function() {
+      var brand = brandSelect.value;
+      modelSelect.innerHTML = '<option value="">Selecciona un modelo</option>';
+      if (brand && models[brand]) {
+        models[brand].forEach(function(m) {
+          var opt = document.createElement('option');
+          opt.value = m; opt.textContent = m;
+          modelSelect.appendChild(opt);
+        });
+        modelSelect.disabled = false;
+      } else {
+        modelSelect.disabled = true;
+      }
+      validateStep1();
+    });
+    modelSelect.addEventListener('change', validateStep1);
+    imeiInput.addEventListener('input', function() {
+      imeiInput.value = imeiInput.value.replace(/\D/g, '');
+      var g = imeiInput.closest('.form-group');
+      g.classList.toggle('has-error', imeiInput.value.length > 0 && imeiInput.value.length !== 15);
+      validateStep1();
+    });
+
+    function validateStep1() {
+      step1Next.disabled = !(brandSelect.value && modelSelect.value && imeiInput.value.length === 15);
+    }
+
+    step1Next.addEventListener('click', function() {
+      var brandText = brandSelect.options[brandSelect.selectedIndex].text;
+      sessionStorage.setItem('gadget_brand', brandText);
+      sessionStorage.setItem('gadget_model', modelSelect.value);
+      sessionStorage.setItem('gadget_imei', imeiInput.value);
+      sessionStorage.setItem('gadget_serial', document.getElementById('serialInput').value);
+
+      document.getElementById('summaryDevice').textContent = brandText + ' ' + modelSelect.value;
+      document.getElementById('summaryImei').textContent = imeiInput.value;
+
+      showLoading('Validando IMEI...').then(function() {
+        history.pushState({ step: 2 }, '', buildUrl('CreateGadgetQuotePublicProcess', {
+          modelTextId: 'Gadget', initProcessAction: 'SelectCoverage', activeZone: 'ProcessZone'
+        }));
+        showStep(2);
+      });
+    });
+
+    // ── Step 2: Coverage ──
+    var selectedPlan = null;
+    document.querySelectorAll('.coverage-option').forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        document.querySelectorAll('.coverage-option').forEach(function(o) { o.classList.remove('selected'); });
+        opt.classList.add('selected');
+        selectedPlan = { name: opt.querySelector('.coverage-name').textContent, price: opt.dataset.price, plan: opt.dataset.plan };
+        document.getElementById('step2Next').disabled = false;
+      });
+    });
+
+    document.getElementById('step2Next').addEventListener('click', function() {
+      sessionStorage.setItem('plan_name', selectedPlan.name);
+      sessionStorage.setItem('plan_price', selectedPlan.price);
+      sessionStorage.setItem('plan_id', selectedPlan.plan);
+
+      // FULL PAGE NAVIGATION to CreateSecureThingsProcess
+      // This causes SIE and all assets to re-load (just like the real site)
+      showLoading('Cargando...').then(function() {
+        window.location.href = buildUrl('CreateSecureThingsProcess', {
+          modelTextId: 'SecureThings', initProcessAction: 'NextGadget', activeZone: 'ProcessZone'
+        });
+      });
+    });
+
+    document.getElementById('step2Back').addEventListener('click', function() {
+      history.pushState({ step: 1 }, '', buildUrl('CreateGadgetQuotePublicProcess', {
+        modelTextId: 'Gadget', initProcessAction: 'ToInitial', activeZone: 'ProcessZone'
+      }));
+      showStep(1);
+    });
+
+    // ── Browser back/forward (within this page only) ──
+    window.addEventListener('popstate', function(e) {
+      if (e.state && e.state.step) showStep(e.state.step);
+    });
+
+    // Set initial URL
+    history.replaceState({ step: 1 }, '', buildUrl('CreateGadgetQuotePublicProcess', {
+      modelTextId: 'Gadget', initProcessAction: 'ToInitial', activeZone: 'ProcessZone'
+    }));
+  </script>
+</body>
+</html>
