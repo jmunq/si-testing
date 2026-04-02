@@ -381,6 +381,62 @@ select.form-control {
 @keyframes spin { to { transform: rotate(360deg); } }
 .loading-text { font-size: 14px; color: #555; }
 
+/* ── Toggle Switch ── */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 22px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #EB0029;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #EB0029;
+}
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+.toggle-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.toggle-group:last-child { border-bottom: none; }
+.toggle-info { flex: 1; padding-right: 12px; }
+.toggle-title { font-size: 14px; font-weight: 600; color: #333; }
+.toggle-desc { font-size: 12px; color: #777; margin-top: 2px; }
+
 /* ── Responsive ── */
 @media (max-width: 480px) {
   .step span { display: none; }
