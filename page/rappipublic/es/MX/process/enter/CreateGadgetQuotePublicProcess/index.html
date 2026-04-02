@@ -1,17 +1,9 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="es" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amet Consequat - Cotiza tu Seguro Gadget</title>
-=======
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amet Consequat - Quote your Gadget Insurance</title>
->>>>>>> mpa
   <!-- CORS fix: route Qualtrics Session Replay requests through same-origin proxy -->
   <script>(function(){if(location.hostname!=="localhost"&&location.hostname!=="127.0.0.1")return;var p="/sr-proxy";var f=window.fetch;if(f){window.fetch=function(u,o){var s=typeof u==="string"?u:(u&&u.url);if(s&&s.indexOf("sr.st3.qualtrics.com")!==-1){try{var x=new URL(s);s=p+x.pathname+(x.search||"");u=typeof u==="string"?s:new Request(s,u);}catch(e){}}return f.call(this,u,o);};}var b=navigator.sendBeacon;if(b){navigator.sendBeacon=function(u,d){if(u&&u.indexOf("sr.st3.qualtrics.com")!==-1){try{var x=new URL(u);u=p+x.pathname+(x.search||"");}catch(e){}}return b.call(this,u,d);};}})();</script>
   <!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
@@ -41,21 +33,6 @@
   <nav class="progress-bar">
     <div class="steps">
       <div class="step active" data-step="1">
-<<<<<<< HEAD
-        <div class="step-circle">1</div><span>Dispositivo</span>
-      </div>
-      <div class="step-connector" data-conn="1"></div>
-      <div class="step" data-step="2">
-        <div class="step-circle">2</div><span>Cobertura</span>
-      </div>
-      <div class="step-connector" data-conn="2"></div>
-      <div class="step" data-step="3">
-        <div class="step-circle">3</div><span>Datos</span>
-      </div>
-      <div class="step-connector" data-conn="3"></div>
-      <div class="step" data-step="4">
-        <div class="step-circle">4</div><span>Pago</span>
-=======
         <div class="step-circle">1</div><span>Device</span>
       </div>
       <div class="step-connector" data-conn="1"></div>
@@ -77,36 +54,19 @@
       <div class="step-connector" data-conn="5"></div>
       <div class="step" data-step="6">
         <div class="step-circle">6</div><span>Payment</span>
->>>>>>> mpa
       </div>
     </div>
   </nav>
 
   <div class="loading-overlay" id="loadingOverlay">
     <div class="spinner"></div>
-<<<<<<< HEAD
-    <div class="loading-text" id="loadingText">Procesando...</div>
-=======
     <div class="loading-text" id="loadingText">Processing...</div>
->>>>>>> mpa
   </div>
 
   <main class="main">
 
     <!-- STEP 1: Device Info -->
     <div class="page active" id="step1">
-<<<<<<< HEAD
-      <h1 class="page-title">Datos de tu dispositivo</h1>
-      <p class="page-subtitle">Ingresa la informacion de tu equipo para cotizar tu seguro.</p>
-
-      <div class="card">
-        <div class="card-title">Informacion del equipo</div>
-
-        <div class="form-group">
-          <label>Marca <span class="required">*</span></label>
-          <select class="form-control" id="brandSelect">
-            <option value="">Selecciona una marca</option>
-=======
       <h1 class="page-title">Device Information</h1>
       <p class="page-subtitle">Enter your device information to get a quote.</p>
 
@@ -117,7 +77,6 @@
           <label>Brand <span class="required">*</span></label>
           <select class="form-control" id="brandSelect">
             <option value="">Select a brand</option>
->>>>>>> mpa
             <option value="lorem">Lorem</option>
             <option value="ipsum">Ipsum</option>
             <option value="dolor">Dolor</option>
@@ -125,39 +84,19 @@
             <option value="consect">Consectetur</option>
             <option value="adipis">Adipiscing</option>
             <option value="elitsed">Elit Sed</option>
-<<<<<<< HEAD
-            <option value="otro">Otro</option>
-=======
             <option value="otro">Other</option>
->>>>>>> mpa
           </select>
         </div>
 
         <div class="form-group">
-<<<<<<< HEAD
-          <label>Modelo <span class="required">*</span></label>
-          <select class="form-control" id="modelSelect" disabled>
-            <option value="">Primero selecciona una marca</option>
-=======
           <label>Model <span class="required">*</span></label>
           <select class="form-control" id="modelSelect" disabled>
             <option value="">Select a brand first</option>
->>>>>>> mpa
           </select>
         </div>
 
         <div class="form-group">
           <label>IMEI <span class="required">*</span></label>
-<<<<<<< HEAD
-          <input type="text" class="form-control" id="imeiInput" placeholder="Ej: 356938035643809" maxlength="15" inputmode="numeric">
-          <div class="form-hint">Marca *#06# en tu telefono para obtener tu IMEI</div>
-          <div class="form-error" id="imeiError">El IMEI debe tener 15 digitos</div>
-        </div>
-
-        <div class="form-group">
-          <label>Numero de serie (opcional)</label>
-          <input type="text" class="form-control" id="serialInput" placeholder="Numero de serie del dispositivo">
-=======
           <input type="text" class="form-control" id="imeiInput" placeholder="Ex: 356938035643809" maxlength="15" inputmode="numeric">
           <div class="form-hint">Dial *#06# on your phone to get your IMEI</div>
           <div class="form-error" id="imeiError">IMEI must be 15 digits</div>
@@ -166,35 +105,16 @@
         <div class="form-group">
           <label>Serial Number (optional)</label>
           <input type="text" class="form-control" id="serialInput" placeholder="Device serial number">
->>>>>>> mpa
         </div>
       </div>
 
       <div class="btn-group">
-<<<<<<< HEAD
-        <button class="btn btn-primary" id="step1Next" disabled>Continuar</button>
-=======
         <button class="btn btn-primary" id="step1Next" disabled>Continue</button>
->>>>>>> mpa
       </div>
     </div>
 
     <!-- STEP 2: Coverage Selection -->
     <div class="page" id="step2">
-<<<<<<< HEAD
-      <h1 class="page-title">Elige tu cobertura</h1>
-      <p class="page-subtitle">Selecciona el plan que mejor se adapte a tus necesidades.</p>
-
-      <div class="card">
-        <div class="card-title">Tu dispositivo</div>
-        <div class="summary-row">
-          <span class="summary-label">Equipo</span>
-          <span class="summary-value" id="summaryDevice">-</span>
-        </div>
-        <div class="summary-row">
-          <span class="summary-label">IMEI</span>
-          <span class="summary-value" id="summaryImei">-</span>
-=======
       <h1 class="page-title">Choose your coverage</h1>
       <p class="page-subtitle">Select the plan that best fits your needs.</p>
 
@@ -207,16 +127,11 @@
         <div class="summary-row">
           <span class="summary-label">IMEI</span>
           <span class="summary-value" id="summaryImei2">-</span>
->>>>>>> mpa
         </div>
       </div>
 
       <div class="card">
-<<<<<<< HEAD
-        <div class="card-title">Planes disponibles</div>
-=======
         <div class="card-title">Available Plans</div>
->>>>>>> mpa
 
         <div class="coverage-option" data-plan="eiusmod" data-price="99">
           <div class="coverage-name">Eiusmod</div>
@@ -244,11 +159,7 @@
       </div>
 
       <div class="card">
-<<<<<<< HEAD
-        <div class="card-title">Terminos y condiciones del seguro</div>
-=======
         <div class="card-title">Insurance Terms and Conditions</div>
->>>>>>> mpa
         <div style="font-size:13px; color:#666; line-height:1.7;">
           <p style="margin-bottom:14px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <p style="margin-bottom:14px;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -264,16 +175,12 @@
       </div>
 
       <div class="btn-group">
-<<<<<<< HEAD
-        <button class="btn btn-primary" id="step2Next" disabled>Continuar</button>
-        <button class="btn btn-secondary" id="step2Back">Regresar</button>
-=======
         <button class="btn btn-primary" id="step2Next" disabled>Continue</button>
         <button class="btn btn-secondary" id="step2Back">Back</button>
       </div>
     </div>
 
-    <!-- STEP 3: Plan confirmation -->
+    <!-- STEP 3: Plan configuration -->
     <div class="page" id="step3">
       <h1 class="page-title">Confirm your plan</h1>
       <p class="page-subtitle">Review and confirm your coverage before proceeding to details.</p>
@@ -516,6 +423,22 @@
           <label>Referral Source</label>
           <input type="text" class="form-control" placeholder="How did you hear about us?">
         </div>
+        <div class="form-group">
+          <label>Expected Daily Usage (Hours)</label>
+          <input type="text" class="form-control" placeholder="e.g. 4-6 hours">
+        </div>
+        <div class="form-group">
+          <label>Primary Use Location</label>
+          <input type="text" class="form-control" placeholder="e.g. Home, Office, Travel">
+        </div>
+        <div class="form-group">
+          <label>Device Color</label>
+          <input type="text" class="form-control" placeholder="e.g. Space Gray, Silver">
+        </div>
+        <div class="form-group">
+          <label>Purchase Date</label>
+          <input type="text" class="form-control" placeholder="Month/Year">
+        </div>
       </div>
 
       <div class="card">
@@ -530,20 +453,14 @@
       <div class="btn-group">
         <button class="btn btn-primary" id="step4Next">Continue to Details</button>
         <button class="btn btn-secondary" id="step4Back">Back</button>
->>>>>>> mpa
       </div>
     </div>
 
   </main>
 
   <footer class="footer">
-<<<<<<< HEAD
-    Amet Consequat &copy; 2025. Todos los derechos reservados.<br>
-    <a href="#">Aviso de Privacidad</a> &middot; <a href="#">Terminos y Condiciones</a> &middot; <a href="#">Contacto</a>
-=======
     Amet Consequat &copy; 2026. All rights reserved.<br>
     <a href="#">Privacy Policy</a> &middot; <a href="#">Terms and Conditions</a> &middot; <a href="#">Contact</a>
->>>>>>> mpa
   </footer>
 
   <script>
@@ -577,11 +494,7 @@
       consect: ['Fugiat 40 Pro','Fugiat 40','Pariatur G84','Pariatur G54','Pariatur G24'],
       adipis: ['Voluptate X7 Ultra','Cillum 11 Pro','Cillum 11','Dolore A79'],
       elitsed: ['Occaecat 8 Pro','Occaecat 8','Cupidatat 7a','Cupidatat 7'],
-<<<<<<< HEAD
-      otro: ['Otro modelo'],
-=======
       otro: ['Other model'],
->>>>>>> mpa
     };
 
     // ── DOM ──
@@ -593,12 +506,8 @@
     function showStep(n) {
       currentStep = n;
       pages.forEach(function(p) { p.classList.remove('active'); });
-<<<<<<< HEAD
-      document.getElementById('step' + n).classList.add('active');
-=======
       var pageEl = document.getElementById('step' + n);
       if (pageEl) pageEl.classList.add('active');
->>>>>>> mpa
       stepEls.forEach(function(s) {
         var sn = parseInt(s.dataset.step);
         s.classList.remove('active','completed');
@@ -614,11 +523,7 @@
 
     function showLoading(text, ms) {
       var ov = document.getElementById('loadingOverlay');
-<<<<<<< HEAD
-      document.getElementById('loadingText').textContent = text || 'Procesando...';
-=======
       document.getElementById('loadingText').textContent = text || 'Processing...';
->>>>>>> mpa
       ov.classList.add('active');
       return new Promise(function(resolve) {
         setTimeout(function() { ov.classList.remove('active'); resolve(); }, ms || 1200);
@@ -633,11 +538,7 @@
 
     brandSelect.addEventListener('change', function() {
       var brand = brandSelect.value;
-<<<<<<< HEAD
-      modelSelect.innerHTML = '<option value="">Selecciona un modelo</option>';
-=======
       modelSelect.innerHTML = '<option value="">Select a model</option>';
->>>>>>> mpa
       if (brand && models[brand]) {
         models[brand].forEach(function(m) {
           var opt = document.createElement('option');
@@ -669,12 +570,6 @@
       sessionStorage.setItem('gadget_imei', imeiInput.value);
       sessionStorage.setItem('gadget_serial', document.getElementById('serialInput').value);
 
-<<<<<<< HEAD
-      document.getElementById('summaryDevice').textContent = brandText + ' ' + modelSelect.value;
-      document.getElementById('summaryImei').textContent = imeiInput.value;
-
-      showLoading('Validando IMEI...').then(function() {
-=======
       var dev = brandText + ' ' + modelSelect.value;
       var imei = imeiInput.value;
       document.getElementById('summaryDevice2').textContent = dev;
@@ -685,7 +580,6 @@
       document.getElementById('summaryImei4').textContent = imei;
 
       showLoading('Validating IMEI...').then(function() {
->>>>>>> mpa
         history.pushState({ step: 2 }, '', buildUrl('CreateGadgetQuotePublicProcess', {
           modelTextId: 'Gadget', initProcessAction: 'SelectCoverage', activeZone: 'ProcessZone'
         }));
@@ -695,15 +589,9 @@
 
     // ── Step 2: Coverage ──
     var selectedPlan = null;
-<<<<<<< HEAD
-    document.querySelectorAll('.coverage-option').forEach(function(opt) {
-      opt.addEventListener('click', function() {
-        document.querySelectorAll('.coverage-option').forEach(function(o) { o.classList.remove('selected'); });
-=======
     document.querySelectorAll('#step2 .coverage-option').forEach(function(opt) {
       opt.addEventListener('click', function() {
         document.querySelectorAll('#step2 .coverage-option').forEach(function(o) { o.classList.remove('selected'); });
->>>>>>> mpa
         opt.classList.add('selected');
         selectedPlan = { name: opt.querySelector('.coverage-name').textContent, price: opt.dataset.price, plan: opt.dataset.plan };
         document.getElementById('step2Next').disabled = false;
@@ -711,22 +599,11 @@
     });
 
     document.getElementById('step2Next').addEventListener('click', function() {
-<<<<<<< HEAD
-=======
       if (!selectedPlan) return;
->>>>>>> mpa
       sessionStorage.setItem('plan_name', selectedPlan.name);
       sessionStorage.setItem('plan_price', selectedPlan.price);
       sessionStorage.setItem('plan_id', selectedPlan.plan);
 
-<<<<<<< HEAD
-      // IMMEDIATE navigation — no delay. The browser starts loading the new
-      // document right away, giving sendBeacon almost no time to complete.
-      // This replicates the customer site's behavior where the beacon is canceled.
-      console.log('[NAV] Click → location.href set at', performance.now().toFixed(1) + 'ms');
-      window.location.href = buildUrl('CreateSecureThingsProcess', {
-        modelTextId: 'SecureThings', initProcessAction: 'NextGadget', activeZone: 'ProcessZone'
-=======
       console.log('[NAV] Click detected at', performance.now().toFixed(1) + 'ms');
       var start = Date.now();
       while (Date.now() - start < 200) { /* Busy wait */ }
@@ -737,7 +614,6 @@
           modelTextId: 'Gadget', initProcessAction: 'SelectCoverage', activeZone: 'ProcessZone'
         }));
         showStep(3);
->>>>>>> mpa
       });
     });
 
@@ -748,9 +624,7 @@
       showStep(1);
     });
 
-<<<<<<< HEAD
-=======
-    // ── Step 3: Confirmation ──
+    // ── Step 3: Plan confirmation ──
     var selectedPlanConfirm = null;
     document.querySelectorAll('#step3 .coverage-option').forEach(function(opt) {
       opt.addEventListener('click', function() {
@@ -811,6 +685,12 @@
       document.getElementById(id).addEventListener('change', updateOptionsSummary4);
     });
 
+    document.getElementById('promoCode').addEventListener('blur', function() {
+      if (this.value) {
+        alert('Promo code "' + this.value + '" is being validated...');
+      }
+    });
+
     document.getElementById('step4Next').addEventListener('click', function() {
       showLoading('Verifying selection...').then(function() {
         window.location.href = buildUrl('CreateSecureThingsProcess', {
@@ -826,7 +706,6 @@
       showStep(3);
     });
 
->>>>>>> mpa
     // ── Browser back/forward (within this page only) ──
     window.addEventListener('popstate', function(e) {
       if (e.state && e.state.step) showStep(e.state.step);
