@@ -1,9 +1,17 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="es" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amet Consequat - Contrata tu Seguro</title>
+=======
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amet Consequat - Get your Insurance</title>
+>>>>>>> mpa
   <!-- CORS fix: route Qualtrics Session Replay requests through same-origin proxy -->
   <script>(function(){if(location.hostname!=="localhost"&&location.hostname!=="127.0.0.1")return;var p="/sr-proxy";var f=window.fetch;if(f){window.fetch=function(u,o){var s=typeof u==="string"?u:(u&&u.url);if(s&&s.indexOf("sr.st3.qualtrics.com")!==-1){try{var x=new URL(s);s=p+x.pathname+(x.search||"");u=typeof u==="string"?s:new Request(s,u);}catch(e){}}return f.call(this,u,o);};}var b=navigator.sendBeacon;if(b){navigator.sendBeacon=function(u,d){if(u&&u.indexOf("sr.st3.qualtrics.com")!==-1){try{var x=new URL(u);u=p+x.pathname+(x.search||"");}catch(e){}}return b.call(this,u,d);};}})();</script>
   <!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
@@ -33,6 +41,7 @@
   <nav class="progress-bar">
     <div class="steps">
       <div class="step completed" data-step="1">
+<<<<<<< HEAD
         <div class="step-circle">1</div><span>Dispositivo</span>
       </div>
       <div class="step-connector completed" data-conn="1"></div>
@@ -46,17 +55,45 @@
       <div class="step-connector" data-conn="3"></div>
       <div class="step" data-step="4">
         <div class="step-circle">4</div><span>Pago</span>
+=======
+        <div class="step-circle">1</div><span>Device</span>
+      </div>
+      <div class="step-connector completed" data-conn="1"></div>
+      <div class="step completed" data-step="2">
+        <div class="step-circle">2</div><span>Coverage</span>
+      </div>
+      <div class="step-connector completed" data-conn="2"></div>
+      <div class="step completed" data-step="3">
+        <div class="step-circle">3</div><span>Config</span>
+      </div>
+      <div class="step-connector completed" data-conn="3"></div>
+      <div class="step completed" data-step="4">
+        <div class="step-circle">4</div><span>Review</span>
+      </div>
+      <div class="step-connector completed" data-conn="4"></div>
+      <div class="step active" data-step="5">
+        <div class="step-circle">5</div><span>Details</span>
+      </div>
+      <div class="step-connector" data-conn="5"></div>
+      <div class="step" data-step="6">
+        <div class="step-circle">6</div><span>Payment</span>
+>>>>>>> mpa
       </div>
     </div>
   </nav>
 
   <div class="loading-overlay" id="loadingOverlay">
     <div class="spinner"></div>
+<<<<<<< HEAD
     <div class="loading-text" id="loadingText">Procesando...</div>
+=======
+    <div class="loading-text" id="loadingText">Processing...</div>
+>>>>>>> mpa
   </div>
 
   <main class="main">
 
+<<<<<<< HEAD
     <!-- STEP 3: Personal Data -->
     <div class="page active" id="step3">
       <h1 class="page-title">Tus datos personales</h1>
@@ -85,10 +122,41 @@
         <div class="form-group">
           <label>Codigo postal <span class="required">*</span></label>
           <input type="text" class="form-control" id="zipInput" placeholder="5 digitos" maxlength="5" inputmode="numeric">
+=======
+    <!-- STEP 5: Personal Data -->
+    <div class="page active" id="step5">
+      <h1 class="page-title">Personal Details</h1>
+      <p class="page-subtitle">We need some information to generate your policy.</p>
+
+      <div class="card">
+        <div class="card-title">Personal Information</div>
+
+        <div class="form-group">
+          <label>Full Name <span class="required">*</span></label>
+          <input type="text" class="form-control" id="fullName" placeholder="First and Last Name">
+        </div>
+
+        <div class="form-group">
+          <label>Email Address <span class="required">*</span></label>
+          <input type="email" class="form-control" id="emailInput" placeholder="you@email.com">
+          <div class="form-error" id="emailError">Enter a valid email</div>
+        </div>
+
+        <div class="form-group">
+          <label>Cell Phone <span class="required">*</span></label>
+          <input type="tel" class="form-control" id="phoneInput" placeholder="10 digits" maxlength="10" inputmode="numeric">
+          <div class="form-error" id="phoneError">Enter a 10-digit number</div>
+        </div>
+
+        <div class="form-group">
+          <label>Zip Code <span class="required">*</span></label>
+          <input type="text" class="form-control" id="zipInput" placeholder="5 digits" maxlength="5" inputmode="numeric">
+>>>>>>> mpa
         </div>
       </div>
 
       <div class="card">
+<<<<<<< HEAD
         <div class="card-title">Direccion</div>
 
         <div class="form-group">
@@ -100,12 +168,29 @@
           <label>Colonia</label>
           <select class="form-control" id="coloniaSelect">
             <option value="">Selecciona una colonia</option>
+=======
+        <div class="card-title">Address</div>
+
+        <div class="form-group">
+          <label>Street and number</label>
+          <input type="text" class="form-control" id="streetInput" placeholder="Street, exterior and interior number">
+        </div>
+
+        <div class="form-group">
+          <label>Neighborhood</label>
+          <select class="form-control" id="coloniaSelect">
+            <option value="">Select a neighborhood</option>
+>>>>>>> mpa
             <option value="centro">Centro</option>
             <option value="roma">Roma Norte</option>
             <option value="condesa">Condesa</option>
             <option value="polanco">Polanco</option>
             <option value="del_valle">Del Valle</option>
+<<<<<<< HEAD
             <option value="otra">Otra</option>
+=======
+            <option value="otra">Other</option>
+>>>>>>> mpa
           </select>
         </div>
       </div>
@@ -113,11 +198,16 @@
       <div class="card">
         <div class="terms-check">
           <input type="checkbox" id="termsCheck">
+<<<<<<< HEAD
           <span>Acepto los <a href="#">Terminos y Condiciones</a>, el <a href="#">Aviso de Privacidad</a> y autorizo el tratamiento de mis datos personales.</span>
+=======
+          <span>I accept the <a href="#">Terms and Conditions</a>, the <a href="#">Privacy Policy</a> and authorize the processing of my personal data.</span>
+>>>>>>> mpa
         </div>
       </div>
 
       <div class="btn-group">
+<<<<<<< HEAD
         <button class="btn btn-primary" id="step3Next" disabled>Continuar al pago</button>
         <button class="btn btn-secondary" id="step3Back">Regresar</button>
       </div>
@@ -132,6 +222,22 @@
         <div class="card-title">Resumen de tu seguro</div>
         <div class="summary-row">
           <span class="summary-label">Dispositivo</span>
+=======
+        <button class="btn btn-primary" id="step5Next" disabled>Continue to payment</button>
+        <button class="btn btn-secondary" id="step5BackToReview">Back</button>
+      </div>
+    </div>
+
+    <!-- STEP 6: Payment -->
+    <div class="page" id="step6">
+      <h1 class="page-title">Summary and Payment</h1>
+      <p class="page-subtitle">Review your insurance details before confirming.</p>
+
+      <div class="card">
+        <div class="card-title">Insurance Summary</div>
+        <div class="summary-row">
+          <span class="summary-label">Device</span>
+>>>>>>> mpa
           <span class="summary-value" id="finalDevice">-</span>
         </div>
         <div class="summary-row">
@@ -143,6 +249,7 @@
           <span class="summary-value" id="finalPlan">-</span>
         </div>
         <div class="summary-row">
+<<<<<<< HEAD
           <span class="summary-label">Asegurado</span>
           <span class="summary-value" id="finalName">-</span>
         </div>
@@ -152,22 +259,45 @@
         </div>
         <div class="summary-row">
           <span class="summary-label">Total mensual</span>
+=======
+          <span class="summary-label">Insured</span>
+          <span class="summary-value" id="finalName">-</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Email</span>
+          <span class="summary-value" id="finalEmail">-</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Monthly Total</span>
+>>>>>>> mpa
           <span class="summary-value summary-total" id="finalPrice">-</span>
         </div>
       </div>
 
       <div class="card">
+<<<<<<< HEAD
         <div class="card-title">Metodo de pago</div>
 
         <div class="form-group">
           <label>Numero de tarjeta <span class="required">*</span></label>
+=======
+        <div class="card-title">Payment Method</div>
+
+        <div class="form-group">
+          <label>Card Number <span class="required">*</span></label>
+>>>>>>> mpa
           <input type="text" class="form-control" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" inputmode="numeric">
         </div>
 
         <div style="display: flex; gap: 12px;">
           <div class="form-group" style="flex:1">
+<<<<<<< HEAD
             <label>Vencimiento <span class="required">*</span></label>
             <input type="text" class="form-control" id="cardExpiry" placeholder="MM/AA" maxlength="5">
+=======
+            <label>Expiry <span class="required">*</span></label>
+            <input type="text" class="form-control" id="cardExpiry" placeholder="MM/YY" maxlength="5">
+>>>>>>> mpa
           </div>
           <div class="form-group" style="flex:1">
             <label>CVV <span class="required">*</span></label>
@@ -176,12 +306,18 @@
         </div>
 
         <div class="form-group">
+<<<<<<< HEAD
           <label>Nombre del titular</label>
           <input type="text" class="form-control" id="cardName" placeholder="Nombre como aparece en la tarjeta">
+=======
+          <label>Cardholder Name</label>
+          <input type="text" class="form-control" id="cardName" placeholder="Name as it appears on the card">
+>>>>>>> mpa
         </div>
       </div>
 
       <div class="btn-group">
+<<<<<<< HEAD
         <button class="btn btn-primary" id="step4Pay">Pagar y contratar</button>
         <button class="btn btn-secondary" id="step4Back">Regresar</button>
       </div>
@@ -201,6 +337,27 @@
         </div>
         <div class="summary-row">
           <span class="summary-label">Dispositivo</span>
+=======
+        <button class="btn btn-primary" id="step6Pay">Pay and Contract</button>
+        <button class="btn btn-secondary" id="step6Back">Back</button>
+      </div>
+    </div>
+
+    <!-- STEP 7: Confirmation -->
+    <div class="page" id="step7">
+      <div class="confirmation-icon">&#x2705;</div>
+      <div class="confirmation-msg">Your insurance has been issued</div>
+      <div class="confirmation-sub">We have sent the policy details to your email.</div>
+
+      <div class="card">
+        <div class="card-title">Policy Details</div>
+        <div class="summary-row">
+          <span class="summary-label">Policy No.</span>
+          <span class="summary-value" id="policyNumber">-</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Device</span>
+>>>>>>> mpa
           <span class="summary-value" id="confDevice">-</span>
         </div>
         <div class="summary-row">
@@ -208,26 +365,44 @@
           <span class="summary-value" id="confPlan">-</span>
         </div>
         <div class="summary-row">
+<<<<<<< HEAD
           <span class="summary-label">Vigencia</span>
           <span class="summary-value" id="confVigencia">-</span>
         </div>
         <div class="summary-row">
           <span class="summary-label">Pago mensual</span>
+=======
+          <span class="summary-label">Validity</span>
+          <span class="summary-value" id="confVigencia">-</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Monthly Payment</span>
+>>>>>>> mpa
           <span class="summary-value summary-total" id="confPrice">-</span>
         </div>
       </div>
 
       <div class="btn-group">
+<<<<<<< HEAD
         <button class="btn btn-primary" id="downloadBtn">Descargar poliza (PDF)</button>
         <button class="btn btn-secondary" id="restartBtn">Contratar otro seguro</button>
+=======
+        <button class="btn btn-primary" id="downloadBtn">Download Policy (PDF)</button>
+        <button class="btn btn-secondary" id="restartBtn">Issue another policy</button>
+>>>>>>> mpa
       </div>
     </div>
 
   </main>
 
   <footer class="footer">
+<<<<<<< HEAD
     Amet Consequat &copy; 2025. Todos los derechos reservados.<br>
     <a href="#">Aviso de Privacidad</a> &middot; <a href="#">Terminos y Condiciones</a> &middot; <a href="#">Contacto</a>
+=======
+    Amet Consequat &copy; 2026. All rights reserved.<br>
+    <a href="#">Privacy Policy</a> &middot; <a href="#">Terms and Conditions</a> &middot; <a href="#">Contact</a>
+>>>>>>> mpa
   </footer>
 
   <script>
@@ -253,22 +428,49 @@
     }
 
     // ── Read data from previous page via sessionStorage ──
+<<<<<<< HEAD
     var gadgetBrand = sessionStorage.getItem('gadget_brand') || 'Dispositivo';
     var gadgetModel = sessionStorage.getItem('gadget_model') || 'Desconocido';
     var gadgetImei  = sessionStorage.getItem('gadget_imei')  || '000000000000000';
     var planName    = sessionStorage.getItem('plan_name')     || 'Basico';
+=======
+    var gadgetBrand = sessionStorage.getItem('gadget_brand') || 'Device';
+    var gadgetModel = sessionStorage.getItem('gadget_model') || 'Unknown';
+    var gadgetImei  = sessionStorage.getItem('gadget_imei')  || '000000000000000';
+    var planName    = sessionStorage.getItem('plan_name')     || 'Basic';
+>>>>>>> mpa
     var planPrice   = sessionStorage.getItem('plan_price')    || '99';
 
     // ── DOM ──
     var pages = document.querySelectorAll('.page');
     var stepEls = document.querySelectorAll('.step');
     var connEls = document.querySelectorAll('.step-connector');
+<<<<<<< HEAD
     var currentStep = 3;
+=======
+    var currentStep = 5;
+>>>>>>> mpa
 
     function showStep(n) {
       currentStep = n;
       pages.forEach(function(p) { p.classList.remove('active'); });
+<<<<<<< HEAD
       document.getElementById('step' + n).classList.add('active');
+=======
+      var pageEl = document.getElementById('step' + n);
+      if (pageEl) pageEl.classList.add('active');
+
+      if (n === 7) {
+        stepEls.forEach(function(s) {
+          s.classList.remove('active');
+          s.classList.add('completed');
+        });
+        connEls.forEach(function(c) { c.classList.add('completed'); });
+        window.scrollTo(0, 0);
+        return;
+      }
+
+>>>>>>> mpa
       stepEls.forEach(function(s) {
         var sn = parseInt(s.dataset.step);
         s.classList.remove('active','completed');
@@ -284,19 +486,28 @@
 
     function showLoading(text, ms) {
       var ov = document.getElementById('loadingOverlay');
+<<<<<<< HEAD
       document.getElementById('loadingText').textContent = text || 'Procesando...';
+=======
+      document.getElementById('loadingText').textContent = text || 'Processing...';
+>>>>>>> mpa
       ov.classList.add('active');
       return new Promise(function(resolve) {
         setTimeout(function() { ov.classList.remove('active'); resolve(); }, ms || 1200);
       });
     }
 
+<<<<<<< HEAD
     // ── Step 3: Personal Data ──
+=======
+    // ── Step 5: Personal Data ──
+>>>>>>> mpa
     var fullName   = document.getElementById('fullName');
     var emailInput = document.getElementById('emailInput');
     var phoneInput = document.getElementById('phoneInput');
     var zipInput   = document.getElementById('zipInput');
     var termsCheck = document.getElementById('termsCheck');
+<<<<<<< HEAD
     var step3Next  = document.getElementById('step3Next');
 
     [fullName, emailInput, phoneInput, zipInput, termsCheck].forEach(function(el) {
@@ -305,6 +516,16 @@
     });
 
     function validateStep3() {
+=======
+    var step5Next  = document.getElementById('step5Next');
+
+    [fullName, emailInput, phoneInput, zipInput, termsCheck].forEach(function(el) {
+      el.addEventListener('input', validateStep5);
+      el.addEventListener('change', validateStep5);
+    });
+
+    function validateStep5() {
+>>>>>>> mpa
       var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
       var phoneOk = /^\d{10}$/.test(phoneInput.value);
       var ok = fullName.value.trim() && emailOk && phoneOk && zipInput.value.length === 5 && termsCheck.checked;
@@ -312,19 +533,28 @@
       emailInput.closest('.form-group').classList.toggle('has-error', emailInput.value.length > 0 && !emailOk);
       phoneInput.closest('.form-group').classList.toggle('has-error', phoneInput.value.length > 0 && !phoneOk);
 
+<<<<<<< HEAD
       step3Next.disabled = !ok;
+=======
+      step5Next.disabled = !ok;
+>>>>>>> mpa
     }
 
     phoneInput.addEventListener('input', function() { phoneInput.value = phoneInput.value.replace(/\D/g, ''); });
     zipInput.addEventListener('input', function() { zipInput.value = zipInput.value.replace(/\D/g, ''); });
 
+<<<<<<< HEAD
     step3Next.addEventListener('click', function() {
+=======
+    step5Next.addEventListener('click', function() {
+>>>>>>> mpa
       var device = gadgetBrand + ' ' + gadgetModel;
       document.getElementById('finalDevice').textContent = device;
       document.getElementById('finalImei').textContent = gadgetImei;
       document.getElementById('finalPlan').textContent = planName;
       document.getElementById('finalName').textContent = fullName.value;
       document.getElementById('finalEmail').textContent = emailInput.value;
+<<<<<<< HEAD
       document.getElementById('finalPrice').textContent = '$' + planPrice + ' MXN/mes';
 
       showLoading('Verificando datos...').then(function() {
@@ -343,6 +573,26 @@
     });
 
     // ── Step 4: Payment ──
+=======
+      document.getElementById('finalPrice').textContent = '$' + planPrice + ' MXN/month';
+
+      showLoading('Verifying data...').then(function() {
+        history.pushState({ step: 6 }, '', buildUrl('CreateSecureThingsProcess', {
+          initProcessAction: 'FromGadget', activeZone: 'ProcessZone'
+        }));
+        showStep(6);
+      });
+    });
+
+    document.getElementById('step5BackToReview').addEventListener('click', function() {
+      console.log('[NAV] Back click → location.href set at', performance.now().toFixed(1) + 'ms');
+      window.location.href = buildUrl('CreateGadgetQuotePublicProcess', {
+        modelTextId: 'Gadget', initProcessAction: 'Review', activeZone: 'ProcessZone'
+      });
+    });
+
+    // ── Step 6: Payment ──
+>>>>>>> mpa
     var cardNumber = document.getElementById('cardNumber');
     cardNumber.addEventListener('input', function() {
       var v = cardNumber.value.replace(/\D/g, '').substring(0, 16);
@@ -358,7 +608,11 @@
     });
 
     document.getElementById('step4Pay').addEventListener('click', function() {
+<<<<<<< HEAD
       showLoading('Procesando pago...', 2500).then(function() {
+=======
+      showLoading('Processing payment...', 2500).then(function() {
+>>>>>>> mpa
         var policyNum = 'POL-' + Math.random().toString(36).substring(2, 8).toUpperCase();
         var today = new Date();
         var endDate = new Date(today);
@@ -368,6 +622,7 @@
         document.getElementById('confDevice').textContent = gadgetBrand + ' ' + gadgetModel;
         document.getElementById('confPlan').textContent = planName;
         document.getElementById('confVigencia').textContent =
+<<<<<<< HEAD
           today.toLocaleDateString('es-MX') + ' - ' + endDate.toLocaleDateString('es-MX');
         document.getElementById('confPrice').textContent = '$' + planPrice + ' MXN/mes';
 
@@ -388,6 +643,28 @@
     // ── Step 5: Confirmation ──
     document.getElementById('downloadBtn').addEventListener('click', function() {
       alert('Descarga de poliza simulada');
+=======
+          today.toLocaleDateString('en-US') + ' - ' + endDate.toLocaleDateString('en-US');
+        document.getElementById('confPrice').textContent = '$' + planPrice + ' MXN/month';
+
+        history.pushState({ step: 7 }, '', buildUrl('CreateSecureThingsProcess', {
+          initProcessAction: 'Confirmation', activeZone: 'ProcessZone'
+        }));
+        showStep(7);
+      });
+    });
+
+    document.getElementById('step6Back').addEventListener('click', function() {
+      history.pushState({ step: 5 }, '', buildUrl('CreateSecureThingsProcess', {
+        modelTextId: 'SecureThings', initProcessAction: 'NextGadget', activeZone: 'ProcessZone'
+      }));
+      showStep(5);
+    });
+
+    // ── Step 7: Confirmation ──
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+      alert('Simulated policy download');
+>>>>>>> mpa
     });
     document.getElementById('restartBtn').addEventListener('click', function() {
       sessionStorage.clear();
@@ -411,7 +688,11 @@
     });
 
     // Set initial URL
+<<<<<<< HEAD
     history.replaceState({ step: 3 }, '', buildUrl('CreateSecureThingsProcess', {
+=======
+    history.replaceState({ step: 5 }, '', buildUrl('CreateSecureThingsProcess', {
+>>>>>>> mpa
       modelTextId: 'SecureThings', initProcessAction: 'NextGadget', activeZone: 'ProcessZone'
     }));
   </script>

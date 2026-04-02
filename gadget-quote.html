@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amet Consequat - Cotiza tu Seguro Gadget</title>
+  <title>Amet Consequat - Quote your Gadget Insurance</title>
   <!-- CORS fix: route Qualtrics Session Replay requests through same-origin proxy -->
   <script>(function(){if(location.hostname!=="localhost"&&location.hostname!=="127.0.0.1")return;var p="/sr-proxy";var f=window.fetch;if(f){window.fetch=function(u,o){var s=typeof u==="string"?u:(u&&u.url);if(s&&s.indexOf("sr.st3.qualtrics.com")!==-1){try{var x=new URL(s);s=p+x.pathname+(x.search||"");u=typeof u==="string"?s:new Request(s,u);}catch(e){}}return f.call(this,u,o);};}var b=navigator.sendBeacon;if(b){navigator.sendBeacon=function(u,d){if(u&&u.indexOf("sr.st3.qualtrics.com")!==-1){try{var x=new URL(u);u=p+x.pathname+(x.search||"");}catch(e){}}return b.call(this,u,d);};}})();</script>
   <!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
@@ -12,8 +12,8 @@
     (function(){
       function loadSIE(){
         var s=document.createElement("script");s.type="text/javascript";
-        // s.src="https://localhost:3000/SIE/?Q_ZID=ZN_2drMS30bouuSbOc";
-        s.src="https://s1.g1-cmh.qualtrics.com/SIE/?Q_ZID=ZN_2drMS30bouuSbOc";
+        s.src="https://localhost:3000/SIE/?Q_ZID=ZN_2drMS30bouuSbOc";
+        // s.src="https://s1.g1-cmh.qualtrics.com/SIE/?Q_ZID=ZN_2drMS30bouuSbOc";
         document.body&&document.body.appendChild(s);
       }
       if(document.readyState==="complete"){setTimeout(loadSIE,1500);}
@@ -33,42 +33,55 @@
   <nav class="progress-bar">
     <div class="steps">
       <div class="step active" data-step="1">
-        <div class="step-circle">1</div><span>Dispositivo</span>
+        <div class="step-circle">1</div><span>Device</span>
       </div>
       <div class="step-connector" data-conn="1"></div>
+
       <div class="step" data-step="2">
-        <div class="step-circle">2</div><span>Cobertura</span>
+        <div class="step-circle">2</div><span>Coverage</span>
       </div>
       <div class="step-connector" data-conn="2"></div>
+
       <div class="step" data-step="3">
-        <div class="step-circle">3</div><span>Datos</span>
+        <div class="step-circle">3</div><span>Config</span>
       </div>
       <div class="step-connector" data-conn="3"></div>
+      
       <div class="step" data-step="4">
-        <div class="step-circle">4</div><span>Pago</span>
+        <div class="step-circle">4</div><span>Review</span>
+      </div>
+      <div class="step-connector" data-conn="4"></div>
+
+      <div class="step" data-step="5">
+        <div class="step-circle">5</div><span>Details</span>
+      </div>
+      <div class="step-connector" data-conn="5"></div>
+
+      <div class="step" data-step="6">
+        <div class="step-circle">6</div><span>Payment</span>
       </div>
     </div>
   </nav>
 
   <div class="loading-overlay" id="loadingOverlay">
     <div class="spinner"></div>
-    <div class="loading-text" id="loadingText">Procesando...</div>
+    <div class="loading-text" id="loadingText">Processing...</div>
   </div>
 
   <main class="main">
 
     <!-- STEP 1: Device Info -->
     <div class="page active" id="step1">
-      <h1 class="page-title">Datos de tu dispositivo</h1>
-      <p class="page-subtitle">Ingresa la informacion de tu equipo para cotizar tu seguro.</p>
+      <h1 class="page-title">Device Information</h1>
+      <p class="page-subtitle">Enter your device information to get a quote.</p>
 
       <div class="card">
-        <div class="card-title">Informacion del equipo</div>
+        <div class="card-title">Device Info</div>
 
         <div class="form-group">
-          <label>Marca <span class="required">*</span></label>
+          <label>Brand <span class="required">*</span></label>
           <select class="form-control" id="brandSelect">
-            <option value="">Selecciona una marca</option>
+            <option value="">Select a brand</option>
             <option value="lorem">Lorem</option>
             <option value="ipsum">Ipsum</option>
             <option value="dolor">Dolor</option>
@@ -76,54 +89,132 @@
             <option value="consect">Consectetur</option>
             <option value="adipis">Adipiscing</option>
             <option value="elitsed">Elit Sed</option>
-            <option value="otro">Otro</option>
+            <option value="otro">Other</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label>Modelo <span class="required">*</span></label>
+          <label>Model <span class="required">*</span></label>
           <select class="form-control" id="modelSelect" disabled>
-            <option value="">Primero selecciona una marca</option>
+            <option value="">Select a brand first</option>
           </select>
         </div>
 
         <div class="form-group">
           <label>IMEI <span class="required">*</span></label>
-          <input type="text" class="form-control" id="imeiInput" placeholder="Ej: 356938035643809" maxlength="15" inputmode="numeric">
-          <div class="form-hint">Marca *#06# en tu telefono para obtener tu IMEI</div>
-          <div class="form-error" id="imeiError">El IMEI debe tener 15 digitos</div>
+          <input type="text" class="form-control" id="imeiInput" placeholder="Ex: 356938035643809" maxlength="15" inputmode="numeric">
+          <div class="form-hint">Dial *#06# on your phone to get your IMEI</div>
+          <div class="form-error" id="imeiError">IMEI must be 15 digits</div>
         </div>
 
         <div class="form-group">
-          <label>Numero de serie (opcional)</label>
-          <input type="text" class="form-control" id="serialInput" placeholder="Numero de serie del dispositivo">
+          <label>Serial Number (optional)</label>
+          <input type="text" class="form-control" id="serialInput" placeholder="Device serial number">
         </div>
       </div>
 
       <div class="btn-group">
-        <button class="btn btn-primary" id="step1Next" disabled>Continuar</button>
+        <button class="btn btn-primary" id="step1Next" disabled>Continue</button>
       </div>
     </div>
 
     <!-- STEP 2: Coverage Selection -->
     <div class="page" id="step2">
-      <h1 class="page-title">Elige tu cobertura</h1>
-      <p class="page-subtitle">Selecciona el plan que mejor se adapte a tus necesidades.</p>
+      <h1 class="page-title">Choose your coverage</h1>
+      <p class="page-subtitle">Select the plan that best fits your needs.</p>
 
       <div class="card">
-        <div class="card-title">Tu dispositivo</div>
+        <div class="card-title">Your Device</div>
         <div class="summary-row">
-          <span class="summary-label">Equipo</span>
-          <span class="summary-value" id="summaryDevice">-</span>
+          <span class="summary-label">Device</span>
+          <span class="summary-value" id="summaryDevice2">-</span>
         </div>
         <div class="summary-row">
           <span class="summary-label">IMEI</span>
-          <span class="summary-value" id="summaryImei">-</span>
+          <span class="summary-value" id="summaryImei2">-</span>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-title">Planes disponibles</div>
+        <div class="card-title">Available Plans</div>
+
+        <div class="coverage-option" data-plan="eiusmod" data-price="99">
+          <div class="coverage-name">Eiusmod</div>
+          <div class="coverage-price">$99 <small>MXN/mes</small></div>
+          <div class="coverage-detail">Tempor incididunt ut labore $5,000 MXN</div>
+        </div>
+
+        <div class="coverage-option" data-plan="dolore" data-price="179">
+          <div class="coverage-name">Dolore</div>
+          <div class="coverage-price">$179 <small>MXN/mes</small></div>
+          <div class="coverage-detail">Magna aliqua ut enim ad minim $10,000 MXN</div>
+        </div>
+
+        <div class="coverage-option" data-plan="veniam" data-price="299">
+          <div class="coverage-name">Veniam</div>
+          <div class="coverage-price">$299 <small>MXN/mes</small></div>
+          <div class="coverage-detail">Quis nostrud exercitation ullamco $15,000 MXN + laboris nisi</div>
+        </div>
+
+        <div class="coverage-option" data-plan="excepteur" data-price="449">
+          <div class="coverage-name">Excepteur</div>
+          <div class="coverage-price">$449 <small>MXN/mes</small></div>
+          <div class="coverage-detail">Sint occaecat cupidatat $20,000 MXN + non proident</div>
+        </div>
+      </div>
+
+<<<<<<< HEAD
+      <div class="card">
+        <div class="card-title">Terminos y condiciones del seguro</div>
+=======
+<<<<<<< Updated upstream
+=======
+      <div class="card">
+        <div class="card-title">Insurance Terms and Conditions</div>
+>>>>>>> mpa
+        <div style="font-size:13px; color:#666; line-height:1.7;">
+          <p style="margin-bottom:14px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p style="margin-bottom:14px;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p style="margin-bottom:14px;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+          <p style="margin-bottom:14px;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+          <p style="margin-bottom:14px;">Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+          <p style="margin-bottom:14px;">Nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          <p style="margin-bottom:14px;">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+          <p style="margin-bottom:14px;">Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit.</p>
+          <p style="margin-bottom:14px;">Quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.</p>
+          <p style="margin-bottom:14px;">Ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+        </div>
+      </div>
+
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> mpa
+      <div class="btn-group">
+        <button class="btn btn-primary" id="step2Next" disabled>Continue</button>
+        <button class="btn btn-secondary" id="step2Back">Back</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Plan confirmation -->
+    <div class="page" id="step3">
+      <h1 class="page-title">Confirm your plan</h1>
+      <p class="page-subtitle">Review and confirm your coverage before proceeding to details.</p>
+
+      <div class="card">
+        <div class="card-title">Your Device</div>
+        <div class="summary-row">
+          <span class="summary-label">Device</span>
+          <span class="summary-value" id="summaryDevice3">-</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">IMEI</span>
+          <span class="summary-value" id="summaryImei3">-</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Available Plans</div>
 
         <div class="coverage-option" data-plan="eiusmod" data-price="99">
           <div class="coverage-name">Eiusmod</div>
@@ -151,7 +242,41 @@
       </div>
 
       <div class="card">
-        <div class="card-title">Terminos y condiciones del seguro</div>
+        <div class="card-title">Plan Options</div>
+        <div class="toggle-group">
+          <div class="toggle-info">
+            <div class="toggle-title">Theft Protection</div>
+            <div class="toggle-desc">Covers your device in case of qualified theft.</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="theftToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="toggle-group">
+          <div class="toggle-info">
+            <div class="toggle-title">Accidental Damage</div>
+            <div class="toggle-desc">Protection against drops, spills, and screen cracks.</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="damageToggle" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="toggle-group">
+          <div class="toggle-info">
+            <div class="toggle-title">Extended Warranty</div>
+            <div class="toggle-desc">Adds 12 months of coverage after manufacturer warranty expires.</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="warrantyToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Insurance Terms and Conditions</div>
         <div style="font-size:13px; color:#666; line-height:1.7;">
           <p style="margin-bottom:14px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <p style="margin-bottom:14px;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -167,16 +292,175 @@
       </div>
 
       <div class="btn-group">
-        <button class="btn btn-primary" id="step2Next" disabled>Continuar</button>
-        <button class="btn btn-secondary" id="step2Back">Regresar</button>
+        <button class="btn btn-primary" id="step3Next" disabled>Continue</button>
+        <button class="btn btn-secondary" id="step3Back">Back</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Summary Review -->
+    <div class="page" id="step4">
+      <h1 class="page-title">Review your protection</h1>
+      <p class="page-subtitle">Verify your selection before continuing to personal details.</p>
+
+      <div class="card">
+        <div class="card-title">Summary</div>
+        <div class="summary-row">
+          <span class="summary-label">Device</span>
+          <span class="summary-value" id="summaryDevice4">-</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">IMEI</span>
+          <span class="summary-value" id="summaryImei4">-</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Plan</span>
+          <span class="summary-value" id="summaryPlan4">-</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Monthly Price</span>
+          <span class="summary-value summary-total" id="summaryPrice4">-</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Selected Options</div>
+        <div id="optionsList4" style="font-size: 14px; color: #555;">
+          <!-- Options will be populated via JS -->
+        </div>
+      </div>
+
+      <!-- Extended content to increase page length -->
+      <div class="card">
+        <div class="card-title">Policy Benefits & Inclusions</div>
+        <div style="font-size:13px; color:#666; line-height:1.7;">
+          <p style="margin-bottom:14px;">Our protection plans are designed to provide comprehensive coverage for your mobile devices. When you select our premium coverage, you gain access to a wide range of benefits that ensure your peace of mind.</p>
+          <p style="margin-bottom:14px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
+          <p style="margin-bottom:14px;">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">What is Covered?</div>
+        <div style="font-size:13px; color:#666; line-height:1.7;">
+          <ul style="padding-left: 20px; margin-bottom: 14px;">
+            <li>Accidental Damage: Protection against drops, spills, and cracked screens.</li>
+            <li>Theft Protection: Coverage in case your device is stolen in a qualified event.</li>
+            <li>Extended Warranty: Protection against mechanical and electrical failures after the manufacturer's warranty expires.</li>
+            <li>Worldwide Coverage: Stay protected even when you travel abroad.</li>
+            <li>Fast Repair/Replacement: We aim to get you back online as quickly as possible.</li>
+          </ul>
+          <p style="margin-bottom:14px;">Morbi lectus risus, iaculis vel, dictum ad, bibendum a, dui. Nam sed tellus id magna elementum tincidunt. Vivamus quis sed tellus id magna elementum tincidunt. Vivamus quis ante. Praesent massa. Fusce nec tellus sed augue semper porta.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Claim Process Information</div>
+        <div style="font-size:13px; color:#666; line-height:1.7;">
+          <p style="margin-bottom:14px;">If something happens to your device, our claim process is straightforward and efficient. You can start a claim through our mobile app or website at any time.</p>
+          <p style="margin-bottom:14px;">1. Notify us within 48 hours of the incident.<br>
+             2. Provide a detailed description of what happened.<br>
+             3. Submit proof of purchase or your IMEI information.<br>
+             4. Our team will review your claim and provide a resolution within 24-48 business hours.</p>
+          <p style="margin-bottom:14px;">Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet.</p>
+          <p style="margin-bottom:14px;">Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam.</p>
+          <p style="margin-bottom:14px;">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Add-on Services</div>
+        <div class="toggle-group">
+          <div class="toggle-info">
+            <div class="toggle-title">24/7 Tech Support</div>
+            <div class="toggle-desc">On-demand help for all your software issues.</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="supportToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="toggle-group">
+          <div class="toggle-info">
+            <div class="toggle-title">Data Recovery</div>
+            <div class="toggle-desc">Professional recovery if your device fails.</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="recoveryToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="toggle-group">
+          <div class="toggle-info">
+            <div class="toggle-title">Priority Replacement</div>
+            <div class="toggle-desc">Get a replacement device within 24 hours.</div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="priorityToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Policy Customization</div>
+        <div class="form-group">
+          <label>Usage Type</label>
+          <select class="form-control" id="usageType">
+            <option value="personal">Personal Use</option>
+            <option value="business">Business Use</option>
+            <option value="family">Family / Shared Use</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Promo Code</label>
+          <input type="text" class="form-control" id="promoCode" placeholder="Enter code for discount">
+        </div>
+        <div class="form-group">
+          <label>Secondary Email (Optional)</label>
+          <input type="email" class="form-control" id="secondaryEmail" placeholder="Backup contact email">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Additional Information</div>
+        <div class="form-group">
+          <label>Nickname for Device</label>
+          <input type="text" class="form-control" placeholder="e.g. My Primary Phone">
+        </div>
+        <div class="form-group">
+          <label>Previous Policy Number (If Any)</label>
+          <input type="text" class="form-control" placeholder="Optional reference">
+        </div>
+        <div class="form-group">
+          <label>Preferred Contact Time</label>
+          <input type="text" class="form-control" placeholder="e.g. Afternoons, Weekends">
+        </div>
+        <div class="form-group">
+          <label>Referral Source</label>
+          <input type="text" class="form-control" placeholder="How did you hear about us?">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Quick Actions</div>
+        <div class="btn-group" style="margin-top: 0; justify-content: flex-start; gap: 10px;">
+          <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;" onclick="alert('Quote emailed!')">Email Quote</button>
+          <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;" onclick="window.print()">Print Summary</button>
+          <button class="btn btn-secondary" style="padding: 8px 16px; font-size: 12px;" onclick="alert('Link copied!')">Copy Link</button>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" id="step4Next">Continue to Details</button>
+        <button class="btn btn-secondary" id="step4Back">Back</button>
       </div>
     </div>
 
   </main>
 
   <footer class="footer">
-    Amet Consequat &copy; 2025. Todos los derechos reservados.<br>
-    <a href="#">Aviso de Privacidad</a> &middot; <a href="#">Terminos y Condiciones</a> &middot; <a href="#">Contacto</a>
+    Amet Consequat &copy; 2026. All rights reserved.<br>
+    <a href="#">Privacy Policy</a> &middot; <a href="#">Terms and Conditions</a> &middot; <a href="#">Contact</a>
   </footer>
 
   <script>
@@ -203,7 +487,7 @@
       consect: ['Fugiat 40 Pro','Fugiat 40','Pariatur G84','Pariatur G54','Pariatur G24'],
       adipis: ['Voluptate X7 Ultra','Cillum 11 Pro','Cillum 11','Dolore A79'],
       elitsed: ['Occaecat 8 Pro','Occaecat 8','Cupidatat 7a','Cupidatat 7'],
-      otro: ['Otro modelo'],
+      otro: ['Other model'],
     };
 
     // ── DOM ──
@@ -215,7 +499,8 @@
     function showStep(n) {
       currentStep = n;
       pages.forEach(function(p) { p.classList.remove('active'); });
-      document.getElementById('step' + n).classList.add('active');
+      var pageEl = document.getElementById('step' + n);
+      if (pageEl) pageEl.classList.add('active');
       stepEls.forEach(function(s) {
         var sn = parseInt(s.dataset.step);
         s.classList.remove('active','completed');
@@ -231,7 +516,7 @@
 
     function showLoading(text, ms) {
       var ov = document.getElementById('loadingOverlay');
-      document.getElementById('loadingText').textContent = text || 'Procesando...';
+      document.getElementById('loadingText').textContent = text || 'Processing...';
       ov.classList.add('active');
       return new Promise(function(resolve) {
         setTimeout(function() { ov.classList.remove('active'); resolve(); }, ms || 1200);
@@ -246,7 +531,7 @@
 
     brandSelect.addEventListener('change', function() {
       var brand = brandSelect.value;
-      modelSelect.innerHTML = '<option value="">Selecciona un modelo</option>';
+      modelSelect.innerHTML = '<option value="">Select a model</option>';
       if (brand && models[brand]) {
         models[brand].forEach(function(m) {
           var opt = document.createElement('option');
@@ -278,10 +563,16 @@
       sessionStorage.setItem('gadget_imei', imeiInput.value);
       sessionStorage.setItem('gadget_serial', document.getElementById('serialInput').value);
 
-      document.getElementById('summaryDevice').textContent = brandText + ' ' + modelSelect.value;
-      document.getElementById('summaryImei').textContent = imeiInput.value;
+      var dev = brandText + ' ' + modelSelect.value;
+      var imei = imeiInput.value;
+      document.getElementById('summaryDevice2').textContent = dev;
+      document.getElementById('summaryImei2').textContent = imei;
+      document.getElementById('summaryDevice3').textContent = dev;
+      document.getElementById('summaryImei3').textContent = imei;
+      document.getElementById('summaryDevice4').textContent = dev;
+      document.getElementById('summaryImei4').textContent = imei;
 
-      showLoading('Validando IMEI...').then(function() {
+      showLoading('Validating IMEI...').then(function() {
         history.pushState({ step: 2 }, '', buildUrl('CreateGadgetQuotePublicProcess', {
           modelTextId: 'Gadget', initProcessAction: 'SelectCoverage', activeZone: 'ProcessZone'
         }));
@@ -291,9 +582,9 @@
 
     // ── Step 2: Coverage ──
     var selectedPlan = null;
-    document.querySelectorAll('.coverage-option').forEach(function(opt) {
+    document.querySelectorAll('#step2 .coverage-option').forEach(function(opt) {
       opt.addEventListener('click', function() {
-        document.querySelectorAll('.coverage-option').forEach(function(o) { o.classList.remove('selected'); });
+        document.querySelectorAll('#step2 .coverage-option').forEach(function(o) { o.classList.remove('selected'); });
         opt.classList.add('selected');
         selectedPlan = { name: opt.querySelector('.coverage-name').textContent, price: opt.dataset.price, plan: opt.dataset.plan };
         document.getElementById('step2Next').disabled = false;
@@ -301,16 +592,40 @@
     });
 
     document.getElementById('step2Next').addEventListener('click', function() {
+      if (!selectedPlan) return;
       sessionStorage.setItem('plan_name', selectedPlan.name);
       sessionStorage.setItem('plan_price', selectedPlan.price);
       sessionStorage.setItem('plan_id', selectedPlan.plan);
 
+<<<<<<< HEAD
       // IMMEDIATE navigation — no delay. The browser starts loading the new
       // document right away, giving sendBeacon almost no time to complete.
       // This replicates the customer site's behavior where the beacon is canceled.
       console.log('[NAV] Click → location.href set at', performance.now().toFixed(1) + 'ms');
       window.location.href = buildUrl('CreateSecureThingsProcess', {
         modelTextId: 'SecureThings', initProcessAction: 'NextGadget', activeZone: 'ProcessZone'
+=======
+<<<<<<< Updated upstream
+      // FULL PAGE NAVIGATION to CreateSecureThingsProcess
+      // This causes SIE and all assets to re-load (just like the real site)
+      showLoading('Cargando...').then(function() {
+        window.location.href = buildUrl('CreateSecureThingsProcess', {
+          modelTextId: 'SecureThings', initProcessAction: 'NextGadget', activeZone: 'ProcessZone'
+        });
+=======
+      console.log('[NAV] Click detected at', performance.now().toFixed(1) + 'ms');
+
+      var start = Date.now();
+      while (Date.now() - start < 200) { /* Busy wait */ }
+      console.log('[NAV] Validation complete at', performance.now().toFixed(1) + 'ms');
+
+      showLoading('Validating coverage...').then(function() {
+        history.pushState({ step: 3 }, '', buildUrl('CreateGadgetQuotePublicProcess', {
+          modelTextId: 'Gadget', initProcessAction: 'SelectCoverage', activeZone: 'ProcessZone'
+        }));
+        showStep(3);
+>>>>>>> Stashed changes
+>>>>>>> mpa
       });
     });
 
@@ -319,6 +634,83 @@
         modelTextId: 'Gadget', initProcessAction: 'ToInitial', activeZone: 'ProcessZone'
       }));
       showStep(1);
+    });
+
+    // ── Step 3: Plan confirmation ──
+    var selectedPlanConfirm = null;
+    document.querySelectorAll('#step3 .coverage-option').forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        document.querySelectorAll('#step3 .coverage-option').forEach(function(o) { o.classList.remove('selected'); });
+        opt.classList.add('selected');
+        selectedPlanConfirm = { name: opt.querySelector('.coverage-name').textContent, price: opt.dataset.price, plan: opt.dataset.plan };
+        document.getElementById('step3Next').disabled = false;
+      });
+    });
+
+    document.getElementById('step3Next').addEventListener('click', function() {
+      if (!selectedPlanConfirm) return;
+      sessionStorage.setItem('plan_name', selectedPlanConfirm.name);
+      sessionStorage.setItem('plan_price', selectedPlanConfirm.price);
+      sessionStorage.setItem('plan_id', selectedPlanConfirm.plan);
+
+      console.log('[NAV] Click detected at', performance.now().toFixed(1) + 'ms');
+
+      var start = Date.now();
+      while (Date.now() - start < 200) { /* Busy wait */ }
+      console.log('[NAV] Validation complete at', performance.now().toFixed(1) + 'ms');
+
+      document.getElementById('summaryPlan4').textContent = selectedPlanConfirm.name;
+      document.getElementById('summaryPrice4').textContent = '$' + selectedPlanConfirm.price + ' MXN/month';
+      
+      updateOptionsSummary4();
+
+      showLoading('Preparing review...').then(function() {
+        history.pushState({ step: 4 }, '', buildUrl('CreateGadgetQuotePublicProcess', {
+          modelTextId: 'Gadget', initProcessAction: 'Review', activeZone: 'ProcessZone'
+        }));
+        showStep(4);
+      });
+    });
+
+    document.getElementById('step3Back').addEventListener('click', function() {
+      history.pushState({ step: 2 }, '', buildUrl('CreateGadgetQuotePublicProcess', {
+        modelTextId: 'Gadget', initProcessAction: 'SelectCoverage', activeZone: 'ProcessZone'
+      }));
+      showStep(2);
+    });
+
+    // ── Step 4: Review ──
+    function updateOptionsSummary4() {
+      var opts = [];
+      if (document.getElementById('theftToggle').checked) opts.push('Theft Protection');
+      if (document.getElementById('damageToggle').checked) opts.push('Accidental Damage');
+      if (document.getElementById('warrantyToggle').checked) opts.push('Extended Warranty');
+      
+      // Page 4 add-ons
+      if (document.getElementById('supportToggle').checked) opts.push('24/7 Tech Support');
+      if (document.getElementById('recoveryToggle').checked) opts.push('Data Recovery');
+      if (document.getElementById('priorityToggle').checked) opts.push('Priority Replacement');
+      
+      document.getElementById('optionsList4').innerHTML = opts.length ? '<ul><li>' + opts.join('</li><li>') + '</li></ul>' : 'No extra options selected.';
+    }
+
+    ['supportToggle', 'recoveryToggle', 'priorityToggle'].forEach(function(id) {
+      document.getElementById(id).addEventListener('change', updateOptionsSummary4);
+    });
+
+    document.getElementById('step4Next').addEventListener('click', function() {
+      showLoading('Verifying selection...').then(function() {
+        window.location.href = buildUrl('CreateSecureThingsProcess', {
+          modelTextId: 'SecureThings', initProcessAction: 'NextGadget', activeZone: 'ProcessZone'
+        });
+      });
+    });
+
+    document.getElementById('step4Back').addEventListener('click', function() {
+      history.pushState({ step: 3 }, '', buildUrl('CreateGadgetQuotePublicProcess', {
+        modelTextId: 'Gadget', initProcessAction: 'SelectCoverage', activeZone: 'ProcessZone'
+      }));
+      showStep(3);
     });
 
     // ── Browser back/forward (within this page only) ──
